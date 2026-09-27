@@ -20,6 +20,10 @@ pub struct Inner {
     genvm_id: genvm_modules_interfaces::GenVMId,
 }
 
+#[cfg(test)]
+#[path = "handler_test.rs"]
+mod tests;
+
 type LlmSubContext = crate::manager::execution_context::LlmSubContext;
 
 pub struct Provider {
