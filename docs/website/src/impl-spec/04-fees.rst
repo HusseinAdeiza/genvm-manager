@@ -294,6 +294,10 @@ external messages, an exhausted exact allocation spills to the per-recipient
 the legacy unallocated path and consumes only its receipt cost. Existing but exhausted
 candidates yield an allocation-budget error.
 
+The default v0.3 fee expressions reject external reservations and receipts with
+``fee below_minimum`` unless ``node.lockedReceiptGasPrice`` is positive, including
+external messages without a matching allocation
+
 Entry presence determines matching, independently of ``budget``. The host supplies
 the allowance available at execution start, optionally reduced by prior consumption.
 Zero means an exhausted allocation; ``null`` removes the per-allocation cap while
